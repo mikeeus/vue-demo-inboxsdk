@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Vue Pipl Search",
+  "version": "1.0",
+  "permissions": [
+    "https://mail.google.com/",
+    "https://inbox.google.com/",
+    "https://api.pipl.com/",
+    "https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
+  ],
+  "content_scripts" : [
+    {
+      "matches": ["https://mail.google.com/*", "https://inbox.google.com/*"],
+      "js": ["inboxsdk.js", "app.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "icon.png"
+  ],
+  "icons": {"128": "icon.png"}
+}
